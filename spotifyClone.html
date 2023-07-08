@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify Clone</title>
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Microbe&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            /* scroll-behavior: smooth; */
+            padding: 0;
+            margin: 0;
+            font-family: var(--font-family, spotify-circular), Helvetica, Arial, sans-serif;
+
+        }
+
+        nav {
+            height: 65px;
+            width: 100%;
+            background-color: black;
+            margin: 0px;
+            position: absolute;
+            color: white;
+        }
+        @media (min-width:301px) and (max-width:600px){
+     #nav{
+        height: 90px;
+        width: 700px;
+        position: relative;
+
+        
+        
+    }
+}
+
+        #logo {
+            height: 30px;
+            width: 100px;
+            /* border: 1px solid white; */
+            margin-left: 230px;
+            margin-top: 10px;
+            /* margin: 10px; */
+            padding: 0px;
+            /* position: relative; */
+            background-image: url(https://www.edigitalagency.com.au/wp-content/uploads/Spotify-Logo-png-RGB-White.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        @media (min-width:301px) and (max-width:600px){
+     #logo{
+        height: 30px;
+        width: 100px;
+        position: relative;
+        margin-left: 0;
+        
+    }
+}
+
+        #button {
+            height: 40px;
+            width: 400px;
+            /* border: 1px solid; */
+            display: flex;
+            margin-top: 15px;
+            padding: 0px;
+            margin-left: 700px;
+            /* margin-bottom: 50px; */
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            /* font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif; */
+        }
+        @media (min-width:301px) and (max-width:600px){
+     #button{
+        height: 20px;
+        width: 400px;
+        
+        margin-left: 150px;
+        display: flex;
+          
+        
+    }
+}
+
+        
+
+        .but {
+            height: 30px;
+            width: 60px;
+            
+            display: inline-block;
+           
+
+        }
+        #pre{
+            margin-right: 8px;
+        }
+        #sign{
+            -webkit-text-fill-color: #222326;
+            
+            color: #222326;
+        }
+
+    
+
+        #line {
+            width: 30px;
+            text-align: center;
+        }
+
+        #back1 {
+            height: 700px;
+            width: 100%;
+            border: 1px solid;
+            border-bottom: none;
+            /* background-color: blueviolet; */
+            background: linear-gradient(rgb(176, 35, 194) 15%, rgb(96, 11, 231));
+        }
+        @media (min-width:301px) and (max-width:600px){
+     #back1{
+        height: 500px;
+        width: 600px;
+        /* background-color: palevioletred; */
+        background: linear-gradient(rgb(176, 35, 194) 15%, rgb(96, 11, 231));
+
+     }}
+     
+
+        #picdiv {
+            height: 500px;
+            width: 310px;
+            border: 1px solid;
+            margin-top: 200px;
+            margin-left: 200px;
+            background-color: white;
+            /* border-radius: 30px; */
+            border-bottom: none;
+            border-top-right-radius: 30px;
+            border-top-left-radius: 30px;
+            background-image: url(./sp.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        /* #sq{
+            height: 10px;
+            width: 60px;
+            border: 1px solid black;
+            margin-left: 130px;
+            margin-top: 15px;
+            background-color: black;
+        } */
+        @media (min-width:301px) and (max-width:600px){
+     #sq{
+        height: 5px;
+        width: 30px;
+       
+            margin-left: 35px;
+            /* margin-right: 50px; */
+
+     }}
+        @media (min-width:301px) and (max-width:600px){
+     #picdiv{
+        height: 200px;
+        width: 100px;
+        background-color: white;
+        border-top-right-radius: 30px;
+        border-top-left-radius: 30px;
+        margin-top: 250px;
+        margin-left: 49px;
+       
+        background-position: center;
+
+     }}
+
+        /* #pic {
+            height: 450px;
+            width: 300px;
+            border: 1px solid;
+            margin-top: 35px;
+            margin-left: -128px;
+            background-image: url(https://i.scdn.co/image/ab678e040000ed3aed58911aecc6dbc16949f40b);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        } */
+        @media (min-width:301px) and (max-width:600px){
+     #pic{
+        height: 150px;
+        width: 90px;
+        
+            margin-left: -30px;
+
+     }}
+
+        #para1 {
+            height: 200px;
+            width: 650px;
+            /* border: 1px solid; */
+            /* margin-top: 0px; */
+            margin-left: 450px;
+            font-size: 30px;
+            color: white;
+            
+            font-family: var(--font-family,spotify-circular),Helvetica,Arial,sans-serif;
+        }
+        @media (min-width:301px) and (max-width:600px){
+     #para1{
+        height: 100px;
+        width: 100px;
+        font-size: small;
+        margin-left: 200px;
+        /* text-align: center; */
+         
+        
+     }
+    }
+
+        #para2 {
+            height: 50px;
+            width: 200px;
+            /* border: 1px solid; */
+            margin-left: 450px;
+            /* margin-top: 30px; */
+            text-align: center;
+            padding: 15px;
+            border-radius: 30px;
+            background-color: white;
+            color: black;
+            font-weight: bolder;
+
+        }
+        @media (min-width:301px) and (max-width:600px){
+     #para2{
+        height: 25px;
+        width: 130px;
+        /* font-size: small; */
+        margin-left: 200px;
+        margin-top: 110px;
+        padding: 3px;
+        text-transform: lowercase;
+        /* text-decoration: none; */
+        
+        
+     }
+    }
+
+
+        #back2 {
+            height: 500px;
+            width: 100%;
+            /* border: 1px solid; */
+            /* display: flex; */
+            border-top: none;
+
+        }
+        @media (min-width:301px) and (max-width:600px){
+     #back2{
+        height: 300px;
+        width: 600px;
+
+     }}
+
+        h2 {
+            margin-top: 80px;
+            margin-left: 700px;
+        }
+        @media (min-width:301px) and (max-width:600px){
+            h2{
+                margin-top: 10px;
+                margin-left: 150px;
+            }}
+
+        #list {
+            height: 150px;
+            width: 100%;
+            /* border: 1px solid; */
+            display: flex;
+            justify-content: space-around;
+            /* justify-content: center; */
+            align-items: center;
+
+        }
+        @media (min-width:301px) and (max-width:600px){
+            #list{
+                height: 50px;
+                width: 600px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 30px;
+            }}
+
+        #pf {
+            height: 90px;
+            width: 90px;
+            /* border: 1px solid; */
+            background-image: url(https://i.scdn.co/image/ab671c3d0000f430678067184805befd38aa0f57);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        #pe {
+            height: 90px;
+            width: 90px;
+            /* border: 1px solid; */
+            background-image: url(https://i.scdn.co/image/ab671c3d0000f430a6f822749d5c25c32ee31d66);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #my {
+            height: 90px;
+            width: 90px;
+            /* border: 1px solid; */
+            background-image: url(https://i.scdn.co/image/ab671c3d0000f430eb43023b5332389f5094530d);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #sd {
+            height: 90px;
+            width: 90px;
+            /* border: 1px solid; */
+            background-image: url(https://i.scdn.co/image/ab671c3d0000f4309430062bc28461dc8fbde6bc);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #info {
+            height: 80px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+        @media (min-width:301px) and (max-width:600px){
+            #info{
+                height: 30px;
+                width: 600px;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                margin-top: 50px;
+            }}
+
+        #info1 {
+            height: 70px;
+            width: 150px;
+            /* border: 1px solid; */
+
+        }
+
+        #info2 {
+            height: 70px;
+            width: 150px;
+            /* border: 1px solid; */
+        }
+
+        #info3 {
+            height: 70px;
+            width: 150px;
+            /* border: 1px solid; */
+        }
+
+        #info4 {
+            height: 70px;
+            width: 150px;
+            /* border: 1px solid; */
+            /* margin-left: 1100px; */
+            
+
+        }
+
+        #back3 {
+            height: 500px;
+            width: 100%;
+            /* border: 1px solid; */
+            /* background-color: blueviolet; */
+            background: linear-gradient(rgb(176, 35, 194) 15%, rgb(96, 11, 231));
+            color: white;
+            text-align: center;
+            padding: 150px;
+            text-decoration: double;
+            font-weight: bolder;
+            font-size: x-large;
+
+        }
+        @media (min-width:301px) and (max-width:600px){
+            #back3{
+                height: 300px;
+                width: 800px;
+                text-align: center;
+                
+                
+            }}
+            @media (min-width:301px) and (max-width:600px){
+            #its{
+                text-align: center;
+                margin: 0 auto;
+
+            }}
+
+        #back4 {
+            height: 450px;
+            width: 100%;
+            /* border: 1px solid; */
+        }
+        @media (min-width:301px) and (max-width:600px){
+            #back4{
+                height: 300px;
+                width: 600px;
+             
+            }}
+
+        #gq {
+            margin-top: 80px;
+            margin-left: 650px;
+            font-weight: bolder;
+            font-size: 40px;
+        }
+        @media (min-width:301px) and (max-width:600px){
+            #gq{
+                margin-left: 100px;
+                font-weight: normal;
+                font-size: 20px;
+                margin-top: 30px;
+            }}
+
+        #q1 {
+            height: 70px;
+            width: 900px;
+            margin-left: 300px;
+            margin-top: 20px;
+            border: none;
+            font-size: larger;
+            font-weight: bold;
+
+
+        }
+        @media (min-width:301px) and (max-width:600px){
+            #q1{
+                height: 20px;
+                width: 500px;
+                margin-left: 100px;
+                font-weight: normal;
+                font-size: 20px;
+                margin-top: 30px;
+            }}
+
+        #back5 {
+            height: 450px;
+            width: 100%;
+            border: 1px solid;
+            /* background-color: blueviolet; */
+            background: linear-gradient(rgb(176, 35, 194) 15%, rgb(96, 11, 231));
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #back5{
+                height: 300px;
+                width: 600px;
+            }
+        }
+
+        #ready {
+            margin-top: 100px;
+            margin-left: 400px;
+            color: white;
+            font-size: 80px;
+            font-weight: 900;
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #ready{
+                font-weight: 200;
+                margin-left: 100px;
+                margin-top: 30px;
+
+
+            }
+        }
+       
+        #in1 {
+            height: 45px;
+            width: 150px;
+            border: 1px solid;
+            margin-left: 650px;
+            margin-top: 50px;
+            border-radius: 30px;
+            background-color: white;
+            font-weight: bold;
+
+
+        }
+
+        @media(min-width:301px) and (max-width:600px){
+            #in1{
+                height: 20px;
+                width: 150px;
+                margin-left: 250px;
+                
+            }}
+
+        /* #in1:hover{
+        text-decoration: none;
+            border-radius: 50%;
+    
+       } */
+        #foot {
+            height: 550px;
+            width: 100%;
+            /* border: 1px solid; */
+            background-color: black;
+            color: white;
+            /* margin: 0px; */
+            position: absolute;
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #foot{
+                height: 800px;
+                width: 600px;  
+            }}
+
+        #lg2 {
+            height: 40px;
+            width: 140px;
+            /* border: 1px solid; */
+            margin-top: 90px;
+            margin-left: 250px;
+            padding-top: 0px;
+            background-image: url(https://www.edigitalagency.com.au/wp-content/uploads/Spotify-Logo-png-RGB-White.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #lg2{
+                height: 20px;
+                width: 63px;  
+                margin: 0;
+                margin-top: 20px;
+                /* position: absolute; */
+            }}
+        
+
+        #com {
+            margin-left: 450px;
+            /* margin-top: 50px; */
+            position: absolute;
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #com{
+                margin-left: 10px;
+                margin-top: 30px;  
+                
+            }}
+
+
+        #cum {
+            height: 200px;
+            width: 150px;
+            /* border: 1px solid; */
+            margin-left: 600px;
+            position: absolute;
+
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #cum{
+                margin-left: 200px; 
+                margin-left: 100px;
+                margin-top: 190px;   
+                
+            }}
+
+        #use {
+            height: 200px;
+            width: 150px;
+            /* border: 1px solid; */
+            margin-left: 800px;
+            position: absolute;
+
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #use{
+                /* margin-left: 350px;   */
+                margin-left: 250px;
+                margin-top: 450px;  
+                
+            }}
+
+        ul:hover {
+            color: rgb(30, 215, 96);
+
+
+        }
+        #ulc{
+            color: #222326;
+        }
+
+        #icon1 {
+            height: 65px;
+            width: 65px;
+            margin-left: 1200px;
+            /* border: 1px solid; */
+            position: absolute;
+            padding: 18px;
+            border-radius: 50%;
+            background-color: #222326;
+            font-size: xx-large;
+            text-align: center;
+
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #icon1{
+                height: 40px;
+                width: 40px;
+                padding: 13px;
+                margin-left: 470px;  
+                position: relative;
+                
+            }}
+       
+
+        #icon2 {
+            height: 65px;
+            width: 65px;
+            margin-left: 1300px;
+            /* border: 1px solid; */
+            position: absolute;
+            padding: 17px;
+            border-radius: 50%;
+            background-color: #222326;
+            font-size: xx-large;
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #icon2{
+                height: 40px;
+                width: 40px;
+                padding: 13px;
+                margin-left: 470px;  
+                position: relative;
+                margin-top: 5px;
+                
+            }}
+
+        #icon3 {
+            height: 65px;
+            width: 65px;
+            margin-left: 1400px;
+            /* border: 1px solid; */
+            padding: 19px;
+            border-radius: 50%;
+            background-color: #222326;
+            font-size: xx-large;
+
+
+        }
+        @media(min-width:301px) and (max-width:600px){
+            #icon3{
+                height: 40px;
+                width: 40px;
+                padding: 13px;
+                margin-left: 470px;  
+                margin-top: 5px;
+                
+            }}
+
+        i:hover {
+            color: rgb(30, 215, 96);
+
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        a:hover {
+            color: rgb(30, 215, 96);
+
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div id="logo">
+
+
+            <div id="button">
+                <div class="but" id="pre"><a
+                        href="https://www.spotify.com/in-en/free/?utm_source=in-en_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_asia_in_premiumbusiness_core_brand_neev+contextual+in-en+google&gclid=CjwKCAiArNOeBhAHEiwAze_nKDXuDYgtBVM9fn5StAvTUUzhCokSI8dHcRCNEZtx8Z9OXZqKS3BXqxoCBvkQAvD_BwE&gclsrc=aw.ds">
+                        Premium </a></div>
+                <div class="but"><a
+                        href="https://www.spotify.com/in-en/free/?utm_source=in-en_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_asia_in_premiumbusiness_core_brand_neev+contextual+in-en+google&gclid=CjwKCAiArNOeBhAHEiwAze_nKDXuDYgtBVM9fn5StAvTUUzhCokSI8dHcRCNEZtx8Z9OXZqKS3BXqxoCBvkQAvD_BwE&gclsrc=aw.ds">
+                        Support</a></div>
+                <div class="but"> <a
+                        href="https://www.spotify.com/in-en/free/?utm_source=in-en_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_asia_in_premiumbusiness_core_brand_neev+contextual+in-en+google&gclid=CjwKCAiArNOeBhAHEiwAze_nKDXuDYgtBVM9fn5StAvTUUzhCokSI8dHcRCNEZtx8Z9OXZqKS3BXqxoCBvkQAvD_BwE&gclsrc=aw.ds">
+                        Download</a></div>
+                <div class="but" id="line">|</div>
+                <div class="but" id="sign"><a
+                        href="https://www.spotify.com/in-en/free/?utm_source=in-en_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_asia_in_premiumbusiness_core_brand_neev+contextual+in-en+google&gclid=CjwKCAiArNOeBhAHEiwAze_nKDXuDYgtBVM9fn5StAvTUUzhCokSI8dHcRCNEZtx8Z9OXZqKS3BXqxoCBvkQAvD_BwE&gclsrc=aw.ds">
+                        Sign up</a></div>
+                <div class="but" id="sign"><a
+                        href="https://www.spotify.com/in-en/free/?utm_source=in-en_brand_contextual_text&utm_medium=paidsearch&utm_campaign=alwayson_asia_in_premiumbusiness_core_brand_neev+contextual+in-en+google&gclid=CjwKCAiArNOeBhAHEiwAze_nKDXuDYgtBVM9fn5StAvTUUzhCokSI8dHcRCNEZtx8Z9OXZqKS3BXqxoCBvkQAvD_BwE&gclsrc=aw.ds">
+                        Log in </a></div>
+            </div>
+        </div>
+    </nav>
+    <div id="back1">
+        <div id="picdiv">
+        
+            <div id="sq">
+
+            <div id="pic">
+
+                <div id="para1">
+                    <h1>Play millions of songs and podcasts,for free.</h1>
+                </div>
+                <div id="para2" onmouseover="getover()" onmouseout="getout()">
+                    <p>GET SPOTIFY FREE</p>
+                </div>
+
+            </div>
+        
+        </div>
+        </div>
+    
+
+    </div>
+    <div id="back2">
+        <h2>Why Spotify?</h2>
+        <div id="list">
+            <div class="play" id="pf"></div>
+            <div class="play" id="pe"></div>
+            <div class="play" id="my"></div>
+            <div class="play" id="sd"></div>
+        </div>
+        <div id="info">
+            <div id="info1">
+                <p> Listen to the songs you love, and discover new music and podcasts.</p>
+            </div>
+            <div id="info2">
+                <p>We'll help you make playlists. Or enjoy playlists made by music experts.</p>
+            </div>
+            <div id="info3">
+                <p>Tell us what you like, and we'll recommend music for you.</p>
+            </div>
+            <div id="info4">
+                <p>To use less data when you play music, turn on Data Saver in Settings. </p>
+            </div>
+        </div>
+
+    </div>
+    <div id="back3">
+        <h1 id="its">It's free.</h1>
+        <h1 id="its"> No credit card required.</h1>
+    </div>
+    <div id="back4">
+        <h1 id="gq">Got question?</h1>
+        <select name="" id="q1">
+            <option value="" selected>How do I create a playlist?</option>
+        </select>
+        <br>
+        <select name="" id="q1">
+            <option value="">How do I activate Data Saver mode?</option>
+        </select>
+        <br>
+        <select name="" id="q1">
+            <option value="">Is it only possible to shuffle play music?</option>
+        </select>
+        <br>
+        <select name="" id="q1">
+            <option value="">Where can I find Podcasts?</option>
+        </select>
+
+    </div>
+    <div id="back5">
+        <h1 id="ready">Ready? Let's play.</h1>
+        <input type="button" value="GET SPOTIFY FREE" id="in1" onmouseover="getover()" onmouseout="getout()">
+    </div>
+    <div id="foot">
+        <div class="footfl">
+
+        <div id="lg2">
+        </div>
+        <div id="com">
+
+            <ul id="ulc">Company</ul>
+            <br>
+            <ul>About</ul>
+            <br>
+            <ul>Job</ul>
+            <br>
+            <ul>For the record</ul>
+        </div>
+        <div id="cum">
+            <ul id="ulc">COMMUNITIES</ul>
+            <br>
+            <ul>For Artists</ul>
+            <br>
+            <ul> Developers</ul>
+            <br>
+            <ul>Advertising</ul>
+            <br>
+            <ul>Investors</ul>
+            <br>
+            <ul> Vendors</ul>
+
+        </div>
+        <div id="use">
+            <ul id="ulc">USEFUL LINKS </ul>
+            <br>
+            <ul>Support</ul>
+            <br>
+            <ul>Web Player</ul>
+            <br>
+            <ul> Free Mobile App</ul>
+        </div>
+        <div id="icon1" class="insta">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+        </div>
+        <div id="icon2"class="insta">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+        </div>
+        <div id="icon3"class="insta">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+        </div>
+    </div>
+
+    </div>
+    <script>
+         function getover() {
+           let ele=document.getElementById("para2")
+            ele.style.height="60px"
+            ele.style.width="225px"
+            ele.style.backgroundColor="white"
+            ele.style.padding="20px"
+        }
+        
+         
+        function getout() {
+           let ele=document.getElementById("para2")
+            ele.style.height="50px"
+            ele.style.width="200px"
+            ele.style.backgroundColor="white"
+            ele.style.padding=""
+        }
+        
+    </script>
+
+</body>
+
+</html>
